@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Pétalas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="game">
+            <div id="flor-container">
+                <div id="flor">
+                    <div class="caule"></div>
+                    <div class="center"></div>
+                </div>
+            </div>
+            <div class="dica">
+                <p><strong>Dica:</strong> <span id="dica">Carregando...</span></p>
+            </div>
+            <div id="palavra"></div>
+            <div id="message"></div>
+            <div id="teclado"></div>
+            <div class="input-area">
+                <input type="text" id="letra" maxlength="1" autofocus placeholder="Digite uma letra">
+                <button onclick="enviarLetra()">Enviar</button>
+            </div>
+            <button id="reset" onclick="novoJogo()">Novo Jogo</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Denilson da Silva Pereira. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/palavras.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

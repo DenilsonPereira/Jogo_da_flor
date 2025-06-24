@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defina a Palavra Secreta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <form id="form-palavra">
+            <h2>Defina a palavra e a dica</h2>
+            <label for="palavra">Qual a palavra secreta?</label>
+            <input type="text" name="palavra" id="palavra" required>
+            <label for="dica">Qual a dica?</label>
+            <input type="text" name="dica" id="dica" required>
+            <input type="submit" value="Iniciar Jogo">
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('form-palavra');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const letterRegex = /^[A-Za-z\s]+$/;
+            const palavraInput = document.getElementById('palavra');
+            const palavra = palavraInput.value.trim().toLowerCase();
+            const dica = document.getElementById('dica').value.trim();
+
+            if (!letterRegex.test(palavra)) {
+                alert('Por favor, use apenas letras na palavra secreta.');
+                palavraInput.focus();
+                return;
+            }
+
+            if (palavra && dica) {
+                localStorage.setItem('palavraPersonalizada', palavra);
+                localStorage.setItem('dicaPersonalizada', dica);
+                window.location.href = 'jogo.html';
+            }
+        });
+    </script>
+</body>
+</html>

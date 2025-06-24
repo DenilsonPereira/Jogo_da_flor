@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Pétalas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Jogo das Pétalas</h1>
+        <p>Descubra a palavra secreta! Cada erro faz uma pétala cair.</p>
+        <div class="modo">
+            <button class="btn-modo" onclick="selecionarModo('solo')">1 Jogador</button>
+            <button class="btn-modo" onclick="selecionarModo('duo')">2 Jogadores</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Denilson da Silva Pereira. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function selecionarModo(modo) {
+            localStorage.setItem('modo', modo);
+            if (modo === 'duo') {
+                window.location.href = 'palavra.html';
+            } else {
+                window.location.href = 'jogo.html';
+            }
+        }
+    </script>
+</body>
+</html>
